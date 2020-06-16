@@ -26,15 +26,28 @@ const init = () => {
     /**
      * @type Circle[]
      */
-    const circles = []; //
-    for (let i = 0; i < 10; i++) {
-        let r = 30;
-        let x = Math.random() * (innerWidth - r * 2) + r;
-        let y = Math.random() * (innerHeight - r * 2) + r;
-        circles.push(
-            new Circle(x, y, r, 0, Math.PI * 2, Math.random() * 8 + 1)
-        );
+    const circles = [];
+    for (let i = 0; i < 200; i++) {
+        const r = 25;
+        const x = randIntRange(r, innerWidth - r);
+        const y = randIntRange(r, innerHeight / 1.3 - r);
+        circles.push(new Circle(x, y, 2, 2, 20, 0, Math.PI * 2));
     }
+    /**
+     * @type Circle
+     */
+    // const circle = new Circle(
+    //     canvas.width / 2,
+    //     canvas.height / 2,
+    //     2,
+    //     2,
+    //     20,
+    //     0,
+    //     Math.PI * 2,
+    //     true,
+    //     colors[4],
+    //     colors[4]
+    // );
 
     // recursive animate function that animates circles and calls update for each circle to update calculate and update its position
     function animate() {
@@ -43,6 +56,7 @@ const init = () => {
         circles.forEach((circle) => {
             circle.update();
         });
+        // circle.update();
     }
 
     animate();
