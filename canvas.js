@@ -27,11 +27,11 @@ const init = () => {
      * @type Circle[]
      */
     const circles = [];
-    for (let i = 0; i < 200; i++) {
-        const r = 25;
+    for (let i = 0; i < 20; i++) {
+        const r = 40;
         const x = randIntRange(r, innerWidth - r);
         const y = randIntRange(r, innerHeight / 1.3 - r);
-        circles.push(new Circle(x, y, 2, 2, 20, 0, Math.PI * 2));
+        circles.push(new Circle(x, y, 2, 2, r, 0, Math.PI * 2));
     }
     /**
      * @type Circle
