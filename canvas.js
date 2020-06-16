@@ -6,48 +6,18 @@ canvas.width = innerWidth;
 // c = context
 const c = canvas.getContext("2d");
 
-const mouse = {
-    x: undefined,
-    y: undefined
-};
-
-window.addEventListener("mousemove", (e) => {
-    mouse.x = e.x;
-    mouse.y = e.y;
-});
-
-window.addEventListener("mouseout", () => {
-    mouse.x = undefined;
-    mouse.y = undefined;
-});
-
 // Supposed to be called the first time when the script loads up (requires lib/canvas to be loaded in html)
 const init = () => {
     /**
      * @type Circle[]
      */
     const circles = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 25; i++) {
         const r = 40;
         const x = randIntRange(r, innerWidth - r);
         const y = randIntRange(r, innerHeight / 1.3 - r);
         circles.push(new Circle(x, y, 2, 2, r, 0, Math.PI * 2));
     }
-    /**
-     * @type Circle
-     */
-    // const circle = new Circle(
-    //     canvas.width / 2,
-    //     canvas.height / 2,
-    //     2,
-    //     2,
-    //     20,
-    //     0,
-    //     Math.PI * 2,
-    //     true,
-    //     colors[4],
-    //     colors[4]
-    // );
 
     // recursive animate function that animates circles and calls update for each circle to update calculate and update its position
     function animate() {
@@ -56,7 +26,6 @@ const init = () => {
         circles.forEach((circle) => {
             circle.update();
         });
-        // circle.update();
     }
 
     animate();
