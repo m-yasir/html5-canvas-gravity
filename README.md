@@ -1,6 +1,6 @@
 # html5-canvas-gravity
 
-Stuff I created while experimenting with gravity effect in html5-canvas
+Stuff I created while experimenting with gravity and ball bounce effect in html5-canvas
 
 ---
 
